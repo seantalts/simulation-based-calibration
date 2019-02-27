@@ -56,7 +56,7 @@ def _group_params(agg, df):
     param_counts = Counter(params)
     for param_name, count in param_counts.items():
         df[param_name] = agg([df["{}[{}]".format(param_name, i)]
-                for i in range(0, count)])
+                for i in range(1, count)])
     return df
 
 def fit_to_df(fit):
